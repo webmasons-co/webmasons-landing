@@ -4545,6 +4545,22 @@ body:not(.device-touch):not(.device-xs):not(.device-xxs) .portfolio-overlay {
 	-webkit-backface-visibility: hidden;
 }
 
+.portfolio-overlay2 a {
+	position: absolute;
+	top: 29%;
+	left: 50%;
+	background-color: #F5F5F5;
+	width: 40px !important;
+	height: 40px !important;
+	margin: -28px 0 0 -44px;
+	font-size: 18px;
+	line-height: 40px;
+	text-align: center;
+	color: #444;
+	border-radius: 50%;
+	-webkit-backface-visibility: hidden;
+}
+
 body:not(.device-touch):not(.device-xs):not(.device-xxs) .portfolio-overlay a {
 	-webkit-transition: color .2s linear, background-color .2s linear, margin-top .2s linear, opacity .2s linear;
 	-o-transition: color .2s linear, background-color .2s linear, margin-top .2s linear, opacity .2s linear;
