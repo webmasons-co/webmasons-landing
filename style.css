@@ -13633,3 +13633,22 @@ body:not(.no-transition) #wrapper,
 	padding:0!important
 }
 
+.dancy_image{
+	height: 600px;
+}
+
+.dancy_image div{
+	height: inherit;
+	background: #DBD7D7;
+}
+
+.dancy_image div img{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	margin: auto;
+	max-width: 100%;
+	max-height: 100%;
+}
