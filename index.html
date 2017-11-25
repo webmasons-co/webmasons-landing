@@ -755,50 +755,28 @@
 				</div>
 
 
-				<div class="section nobottommargin" id="subscribe">
+				<div class="section nobottommargin">
 					<div class="container clearfix">
 
 						<div class="heading-block center">
 							<h3>Subscribe to our <span>Newsletter</span></h3>
-							<span>To get our free handbook</span>
 						</div>
-
-						<!-- Begin MailChimp Signup Form -->
-						<div class="subscribe-widget" id="mc_embed_signup">
-						<div id="mce-responses" class="clear">
-								<div class="response" id="mce-error-response" style="display:none"></div>
-								<div class="response" id="mce-success-response" style="display:none"></div>
-							</div>
-						<form action="https://webmasons.us14.list-manage.com/subscribe/post?u=65392a5e8256093b0755e4321&amp;id=e24515e1d0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate nobottommargin" target="_blank" novalidate>
-								<div class="input-group input-group-lg divcenter" style="max-width:600px;">
-									<span class="input-group-addon"><i class="icon-email2"></i></span>
-									<input type="email" name="EMAIL" class="form-control required email" placeholder="Enter your Email" id="mce-EMAIL" style="border: 1px solid #cccccc;">
-									<span class="input-group-btn">
-										<button class="btn btn-default" type="submit">Subscribe Now</button>
-									</span>
-								</div>
-						</form>
-
-						</div>
-
-						<!--End mc_embed_signup
 
 						<div class="subscribe-widget">
 							<div class="widget-subscribe-form-result"></div>
-							<form id="widget-subscribe-form2" action="include/subscribe.php" role="form" method="post" class="nobottommargin">
+							<form id="widget-subscribe-form2" onsubmit="return validateFormOnSubmit(this);" role="form" method="post" class="nobottommargin">
 								<div class="input-group input-group-lg divcenter" style="max-width:600px;">
 									<span class="input-group-addon"><i class="icon-email2"></i></span>
-									<input type="email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
+									<input type="email" name="email" class="form-control required email" placeholder="Enter your Email">
 									<span class="input-group-btn">
 										<button class="btn btn-default" type="submit">Subscribe Now</button>
 									</span>
 								</div>
 							</form>
 						</div>
--->
+
 					</div>
 				</div>
-
 
 			</div>
 
@@ -902,10 +880,40 @@
 
 	<script type="text/javascript">
 
+
 		var tpj=jQuery;
 		tpj.noConflict();
 
+		tpj(document).ready(function () {
+			// Listen to submit event on the <form> itself!
+			tpj('#widget-subscribe-form2').submit(function (e) {
+				e.preventDefault();
+			});
+		});
+
+		function validateFormOnSubmit(theForm) {
+			console.log(theForm);
+			tpj.ajax(
+				{
+					url: "http://localhost:3000/users", 
+					method:"GET",
+					success: function(result){
+						console.log(result);
+						alert('paddghrasti');
+		    		},
+		    		error: function ( jqXHR, textStatus, errorThrown ){
+		    			console.log(jqXHR);
+		    			console.log("textStatus: "+textStatus);
+		    			console.log(errorThrown);
+		    		}
+
+        		}
+        	);
+			
+			
+		}
 		tpj(document).ready(function() {
+			
 
 			var apiRevoSlider = tpj('.tp-banner').show().revolution(
 			{
@@ -1011,6 +1019,7 @@
 			});
 
 		}); //END REVOLUTION SLIDER
+		
 
 	</script>
 

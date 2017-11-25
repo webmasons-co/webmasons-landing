@@ -2120,7 +2120,7 @@ var SEMICOLON = SEMICOLON || {};
 			SEMICOLON.widget.carousel();
 			SEMICOLON.widget.linkScroll();
 			SEMICOLON.widget.contactForm();
-			SEMICOLON.widget.subscription();
+			//SEMICOLON.widget.subscription();
 			SEMICOLON.widget.quickContact();
 			SEMICOLON.widget.stickySidebar();
 			SEMICOLON.widget.cookieNotify();
