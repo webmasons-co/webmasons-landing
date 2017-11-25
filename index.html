@@ -892,16 +892,20 @@
 		});
 
 		function validateFormOnSubmit(theForm) {
-			console.log(theForm);
+			console.log(theForm[0].value);
 			tpj.ajax(
 				{
-					url: "https://api.webmasons.co/users", 
-					method:"GET",
+					url: "https://api.webmasons.co/users/subscribe", 
+					method:"POST",
+					data: {
+				        "email": theForm[0].value
+				    },
+				    dataType: 'json',
 					success: function(result){
-						console.log(result);
-						alert('paddghrasti');
-		    		},
+						alert('Success! Check your mailbox for download link...');
+					},
 		    		error: function ( jqXHR, textStatus, errorThrown ){
+		    			alert('Something Went Wrong! Mail could\'nt be sent');
 		    			console.log(jqXHR);
 		    			console.log("textStatus: "+textStatus);
 		    			console.log(errorThrown);
