@@ -901,23 +901,21 @@
 						"content-type": "application/json",
 						"cache-control": "no-cache",
 					},
-				    data: JSON.stringify({ "email": theForm[0].value }),
-				    processData: false,
+					data: JSON.stringify({ "email": theForm[0].value }),
+					processData: false,
 					success: function(result){
 						alert('Success! Check your mailbox for download link...');
 						console.log(result);
 					},
-		    		error: function ( jqXHR, textStatus, errorThrown ){
-		    			alert('Something Went Wrong! Mail could\'nt be sent');
-		    			console.log(jqXHR);
-		    			console.log("textStatus: "+textStatus);
-		    			console.log(errorThrown);
-		    		}
+					error: function ( jqXHR, textStatus, errorThrown ){
+						alert('Something Went Wrong! Mail could\'nt be sent');
+						console.log(jqXHR);
+						console.log("textStatus: "+textStatus);
+						console.log(errorThrown);
+					}
 
-        		}
-        	);
-			
-			
+				}
+			);
 		}
 		tpj(document).ready(function() {
 			
@@ -1029,6 +1027,8 @@
 		
 
 	</script>
-
+	<!-- Start of HubSpot Embed Code -->
+	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4090228.js"></script>
+	<!-- End of HubSpot Embed Code -->
 </body>
 </html>
