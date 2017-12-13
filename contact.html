@@ -17,6 +17,7 @@
 	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
 	<link rel="stylesheet" href="css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="js/css/alertify.css" type="text/css" />
 
 	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -116,7 +117,7 @@
 
 						<!-- Contact Form
 						============================================= -->
-						<form class="nobottommargin" id="template-contactform" name="template-contactform" action="include/sendemail.php" method="post">
+						<form class="nobottommargin" id="template-contactform" name="template-contactform" id="contact-form" method="post">
 
 							<div class="col_half">
 								<label for="template-contactform-name">Name <small>*</small></label>
@@ -147,11 +148,6 @@
 							</div>
 
 							<div class="clear"></div>
-
-							<div class="col_full">
-								<label for="template-contactform-subject">Subject <small>*</small></label>
-								<input type="text" id="template-contactform-subject" name="template-contactform-subject" value="" class="required sm-form-control" />
-							</div>
 
 							<div class="col_full">
 								<label for="template-contactform-message">Message <small>*</small></label>
@@ -264,6 +260,11 @@
 	============================================= -->
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/plugins.js"></script>
+
+	<!-- Mail JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="js/alertify/alertify.js"></script>
+	<script type="text/javascript" src="js/mail.js"></script>
 
 	<!-- Footer Scripts
 	============================================= -->
