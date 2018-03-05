@@ -130,7 +130,7 @@
 
 						<!-- Contact Form
 						============================================= -->
-						<form class="nobottommargin" id="template-contactform" name="template-contactform" id="contact-form" method="POST" action="https://formspree.io/hello@webmasons.co">
+						<form class="nobottommargin" id="template-contactform" name="template-contactform" id="contact-form" method="POST" role="form" onsubmit="return validateFormOnSubmit(this);">
 
 							<div class="col_half">
 								<label for="template-contactform-name">Name <small>*</small></label>
@@ -288,6 +288,39 @@
 	<script type="text/javascript" src="js/jquery.gmap.js"></script>
 
 	<script type="text/javascript">
+
+		function validateFormOnSubmit(theForm) {
+			console.log(theForm);
+			$.ajax(
+				{
+					url: "https://api.webmasons.co/users/subscribe", 
+					method:"POST",
+					headers: {
+						"content-type": "application/json",
+						"cache-control": "no-cache",
+					},
+					data: JSON.stringify({ 
+						"name": theForm[0].value,
+						"email":theForm[0].value,
+						"phone":theForm[0].value,
+						"service":theForm[0].value,
+						"message":theForm[0].value
+					 }),
+					processData: false,
+					success: function(result){
+						alert('Success! Check your mailbox for download link...');
+						console.log(result);
+					},
+					error: function ( jqXHR, textStatus, errorThrown ){
+						alert('Something Went Wrong! Mail could\'nt be sent');
+						console.log(jqXHR);
+						console.log("textStatus: "+textStatus);
+						console.log(errorThrown);
+					}
+
+				}
+			);
+		}
 
 		$('#google-map').gMap({
 			address: 'Melbourne, Australia',
